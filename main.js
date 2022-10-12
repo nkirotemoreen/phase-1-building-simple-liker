@@ -1,8 +1,8 @@
 // Defining text characters for the empty and full hearts for you to use later.
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
+const articleHearts = document.querySelectorAll(".like-glyph");
 
-// Your JavaScript code goes here!
 function likeCallback(e) {
   const heart = e.target;
   mimicServerCall("bogusUrl")
@@ -23,6 +23,36 @@ function likeCallback(e) {
     });
 }
 
+for (const glyph of articleHearts) {
+  glyph.addEventListener("click", likeCallback);
+}
+
+// Your JavaScript code goes here!
+// const articleHearts = document.querySelectorAll(".like-glyph");
+// function loveCallBack(e){
+//   const loveHeart = e.target;
+//   mimicServerCall('bogusUrl')
+//   .then(function(){
+//     if(loveHeart.innerText === EMPTY_HEART){
+//       loveHeart.innerText = FULL_HEART;
+//       loveHeart.classname = 'activated-heart'
+//     }else{
+//       loveHeart.innerText === EMPTY_HEART;
+//       loveHeart.classname ="";
+//     }
+//   })
+//   .catch((error)=>{
+//     const modal = document.getElementById('modal')
+//     modal.classname =""
+//     modal.innerText= error;
+//     setTimeout(()=> modal.classname = "hidden",3000);
+
+//   });
+
+// }
+// for (const glyph of articleHearts) {
+//   glyph.addEventListener("click", loveCallBack);
+// }
 
 
 //------------------------------------------------------------------------------
